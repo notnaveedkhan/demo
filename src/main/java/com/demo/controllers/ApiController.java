@@ -16,4 +16,10 @@ public class ApiController {
         return ResponseEntity.ok(String.format("Hi, Welcome to localhost.", name));
     }
 
+    @GetMapping("/exit")
+    public ResponseEntity exit() {
+        System.exit(0);
+        return ResponseEntity.ok().build();
+    }
+
 }

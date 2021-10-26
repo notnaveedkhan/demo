@@ -15,7 +15,7 @@
     <description>demo</description>
     <properties>
         <java.version>1.8</java.version>
-        <start-class>com.demo.Application</start-class>
+<!--        <start-class>com.demo.Application</start-class>-->
     </properties>
     <dependencies>
         <dependency>

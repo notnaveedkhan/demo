@@ -10,10 +10,19 @@ public class ApiController {
 
     @GetMapping("/")
     public ResponseEntity<String> hi(@RequestParam(required = false) String name) {
+        String anchor = "<br><a href='/bye'>Leave</a>";
         if (name != null && !name.isEmpty()) {
             return ResponseEntity.ok(String.format("Hi, %s Welcome to localhost.", name));
         }
-        return ResponseEntity.ok(String.format("Hi, Welcome to localhost.", name));
+        return ResponseEntity.ok(String.format("Hi, Welcome to localhost.%s", name, anchor));
+    }
+
+    @GetMapping("/bye")
+    public ResponseEntity<String> bye(@RequestParam(required = false) String name) {
+        if (name != null && !name.isEmpty()) {
+            return ResponseEntity.ok(String.format("Bye Bye! See you again soon, %s .", name));
+        }
+        return ResponseEntity.ok(String.format("Bye Bye! See you again soon.", name));
     }
 
     @GetMapping("/exit")

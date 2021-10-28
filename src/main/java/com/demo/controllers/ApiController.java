@@ -12,9 +12,9 @@ public class ApiController {
     public ResponseEntity<String> hi(@RequestParam(required = false) String name) {
         String anchor = "<br><a href='/bye'>Leave</a>";
         if (name != null && !name.isEmpty()) {
-            return ResponseEntity.ok(String.format("Hi, %s Welcome to localhost.", name));
+            return ResponseEntity.ok(String.format("Hi, %s Welcome to localhost.%s", name, anchor));
         }
-        return ResponseEntity.ok(String.format("Hi, Welcome to localhost.%s", name, anchor));
+        return ResponseEntity.ok(String.format("Hi, Welcome to localhost.%s", anchor));
     }
 
     @GetMapping("/bye")
